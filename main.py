@@ -18,6 +18,9 @@ for index, row in df.iterrows():
              ln=1, align="L")
     pdf.line(10, 21, 200, 21)
 
+    for i in range(31, 288, 10):
+        pdf.line(10, i, 200, i)
+
     # Set the footer
     pdf.ln(264)
     pdf.set_font(family="TIMES", style="I", size=8)
@@ -27,6 +30,9 @@ for index, row in df.iterrows():
 
     for i in range(row["Pages"]-1):
         pdf.add_page()
+
+        for i in range(10, 288, 10):
+            pdf.line(10, i, 200, i)
 
         # Set the footer
         pdf.ln(276)
